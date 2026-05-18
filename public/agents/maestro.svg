@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(370 118) rotate(132.974) scale(418.702)">
+      <stop stop-color="#FF5B2A"/>
+      <stop offset="1" stop-color="#080808"/>
+    </radialGradient>
+    <linearGradient id="face" x1="256" y1="84" x2="256" y2="438" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F4F4"/>
+      <stop offset="1" stop-color="#5C5C5C"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <path d="M170 420C176 332 205 278 256 278C307 278 336 332 342 420H170Z" fill="#101010"/>
+  <ellipse cx="256" cy="214" rx="102" ry="132" fill="url(#face)"/>
+  <path d="M203 196C218 181 238 174 256 174C274 174 294 181 309 196" stroke="#111" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="219" cy="226" r="9" fill="#111"/>
+  <circle cx="293" cy="226" r="9" fill="#111"/>
+  <path d="M224 276C241 287 271 287 288 276" stroke="#111" stroke-width="10" stroke-linecap="round"/>
+  <path d="M256 90L272 122H240L256 90Z" fill="#FF3B00"/>
+</svg>
