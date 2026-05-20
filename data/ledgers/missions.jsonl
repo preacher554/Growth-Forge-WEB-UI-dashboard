@@ -1,0 +1,1 @@
+{"id": "mission-sandbox-ai-cafe-001", "systemId": "instagrow", "accountId": "sandbox-ai-cafe", "title": "Simulate first client account workflow", "mode": "sandbox", "gate": "Research Gate", "owner": "Scout", "status": "running", "objective": "Practice the full InstaGrow agent handoff loop before real clients arrive."}

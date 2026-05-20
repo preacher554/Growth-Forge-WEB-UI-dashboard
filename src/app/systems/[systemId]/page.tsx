@@ -13,99 +13,7 @@ import { notFound } from "next/navigation";
 import { LiveClock } from "@/components/live-clock";
 import { AssistantPortraitCard } from "@/components/assistant-portrait-card";
 import { WorkerAgentCard } from "@/components/worker-agent-card";
-
-const systems = {
-  instagrow: {
-    title: "InstaGrow Monitor",
-    subtitle: "Instagram operating lane",
-    accounts: [
-      {
-        id: "akun-1",
-        handle: "@akun_1",
-        status: "Running",
-        currentStep: "Creative",
-        owner: "Pixel",
-        nextGate: "Creative QA",
-        lastUpdate: "2m ago",
-        activeStage: "Creative",
-      },
-      {
-        id: "akun-2",
-        handle: "@akun_2",
-        status: "Waiting Approval",
-        currentStep: "Approval",
-        owner: "Quill",
-        nextGate: "Chief review",
-        lastUpdate: "18m ago",
-        activeStage: "Approval",
-      },
-      {
-        id: "akun-3",
-        handle: "@akun_3",
-        status: "Idle",
-        currentStep: "Analytics",
-        owner: "Dispatch",
-        nextGate: "Next brief",
-        lastUpdate: "1h ago",
-        activeStage: "Analytics",
-      },
-    ],
-    roster: [
-      {
-        id: "instagrow-conductor",
-        name: "Maestro",
-        model: "anthropic/claude-sonnet-4",
-        provider: "openrouter",
-        status: "stopped",
-        defaultPortrait: "/agents/maestro.png",
-      },
-      {
-        id: "instagrow-research",
-        name: "Scout",
-        model: "google/gemini-2.5-flash",
-        provider: "openrouter",
-        status: "stopped",
-        defaultPortrait: "/agents/scout.png",
-      },
-      {
-        id: "instagrow-content",
-        name: "Quill",
-        model: "anthropic/claude-sonnet-4",
-        provider: "openrouter",
-        status: "stopped",
-        defaultPortrait: "/agents/quill.png",
-      },
-      {
-        id: "instagrow-creative",
-        name: "Pixel",
-        model: "openai/gpt-5.5",
-        provider: "openrouter",
-        status: "stopped",
-        defaultPortrait: "/agents/pixel.png",
-      },
-      {
-        id: "instagrow-publishing",
-        name: "Dispatch",
-        model: "meta-llama/llama-3.3-70b-instruct",
-        provider: "openrouter",
-        status: "stopped",
-        defaultPortrait: "/agents/dispatch.png",
-      },
-    ],
-    activity: [
-      "Pixel completed visual QA for @akun_1",
-      "Quill moved @akun_2 into approval gate",
-      "Dispatch logged T+24 analytics for @akun_3",
-    ],
-  },
-  tiktokgrow: {
-    title: "TikTokGrow Monitor",
-    subtitle: "TikTok operating lane",
-    accounts: [],
-    roster: [],
-    activity: [],
-  },
-};
+import { getSystemOverview } from "@/lib/data/selectors";
 
 type SystemPageProps = {
   params: Promise<{
@@ -115,7 +23,7 @@ type SystemPageProps = {
 
 export default async function SystemPage({ params }: SystemPageProps) {
   const { systemId } = await params;
-  const system = systems[systemId as keyof typeof systems];
+  const system = getSystemOverview(systemId);
 
   if (!system) {
     notFound();
@@ -232,9 +140,19 @@ export default async function SystemPage({ params }: SystemPageProps) {
             </div>
 
             <div className="mt-5 space-y-4">
-              {system.accounts.map((account) => (
-                <AccountRow key={account.handle} account={account} />
-              ))}
+              {system.accounts.length > 0 ? (
+                system.accounts.map((account) => (
+                  <AccountRow key={account.handle} account={account} systemId={systemId} />
+                ))
+              ) : (
+                <div className="rounded-2xl border border-dashed border-white/10 bg-black/20 p-6 text-sm leading-6 text-white/55">
+                  <p className="font-medium text-white">No active Instagram accounts</p>
+                  <p className="mt-2">
+                    Account Queue is reserved for live Instagram/client missions. Infrastructure repos,
+                    worker profiles, and internal services stay out of this queue.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 
@@ -273,7 +191,9 @@ const pipelineStages = [
 
 function AccountRow({
   account,
+  systemId,
 }: {
+  systemId: string;
   account: {
     id: string;
     handle: string;
@@ -287,7 +207,7 @@ function AccountRow({
 }) {
   return (
     <Link
-      href={`/systems/instagrow/accounts/${account.id}`}
+      href={`/systems/${systemId}/accounts/${account.id}`}
       className="group block rounded-2xl border border-white/10 bg-black/20 p-5 transition duration-300 hover:-translate-y-0.5 hover:border-forge-red/40 hover:bg-white/[0.035]"
     >
       <div className="grid gap-5 lg:grid-cols-[0.9fr_1fr_1fr_1fr_0.7fr]">
