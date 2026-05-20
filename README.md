@@ -55,29 +55,27 @@ Supported mock account IDs:
 
 ## Current data state
 
-The app currently uses inline mock data in:
+The app now uses a local JSONL ledger + selector layer instead of inline page mock data.
 
-- `src/app/systems/[systemId]/page.tsx`
-- `src/app/systems/[systemId]/accounts/[accountId]/page.tsx`
-
-Hermes should replace this with a selector/data layer when real GrowthForge
-ledgers exist.
-
-Recommended future structure:
+Current structure:
 
 ```text
 data/
   ledgers/
+    systems.jsonl
     accounts.jsonl
-    projects.jsonl
-    growth-targets.jsonl
+    agent-roster.jsonl
+    missions.jsonl
     agent-activity.jsonl
-    analytics-snapshots.jsonl
+    handoffs.jsonl
     publishing-log.jsonl
+    analytics-snapshots.jsonl
     cron-jobs.jsonl
-  summaries/
-    instagrow.md
-    tiktokgrow.md
+    learning-loop.jsonl
+    account-dashboards.jsonl
+  sandbox/
+    sandbox-ai-cafe/
+      README.md
 
 src/lib/data/
   schemas.ts
@@ -85,17 +83,21 @@ src/lib/data/
   selectors.ts
 ```
 
-Recommended selector functions:
+The included sandbox account is:
+
+```text
+/systems/instagrow/accounts/sandbox-ai-cafe
+```
+
+It simulates an InstaGrow client account so the team can test the worker-agent loop
+while waiting for real clients. The sandbox is read-only and must not publish.
+
+Selector functions:
 
 ```ts
 getSystems()
 getSystemOverview(systemId)
-getAccountQueue(systemId)
-getAccountDashboard(accountId)
-getAgentRoster(systemId)
-getAgentActivity(systemId)
-getGrowthTargets(accountId)
-getCronJobs(accountId)
+getAccountDashboard(systemId, accountId)
 ```
 
 UI components should call selector functions. Do not let UI components read raw

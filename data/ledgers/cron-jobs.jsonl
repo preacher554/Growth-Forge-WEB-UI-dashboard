@@ -1,0 +1,3 @@
+{"systemId": "instagrow", "accountId": "sandbox-ai-cafe", "schedule": "Daily · 08:30 WIB", "description": "Simulate overnight analytics summary and account health check.", "agent": "Dispatch", "status": "active"}
+{"systemId": "instagrow", "accountId": "sandbox-ai-cafe", "schedule": "Daily · 11:00 WIB", "description": "Refresh cross-platform hook research for the sandbox niche.", "agent": "Scout", "status": "active"}
+{"systemId": "instagrow", "accountId": "sandbox-ai-cafe", "schedule": "Every Monday · 08:00 WIB", "description": "Review target alignment and route next weekly experiment.", "agent": "Maestro", "status": "active"}
