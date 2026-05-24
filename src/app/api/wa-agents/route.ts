@@ -51,7 +51,7 @@ export async function GET() {
         package: tenant.package,
         whatsappInstance: tenant.whatsapp_instance,
         aiEnabled: tenant.ai_enabled,
-        model: process.env.HERMES_MODEL || "z-ai/glm-4.5-air:free",
+        model: process.env.HERMES_MODEL || "google/gemma-4-31b-it:free",
         customerCount,
         activeCount,
         waitingHumanCount,
