@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useEffect, useState } from "react";
 
 interface Customer {
@@ -121,9 +123,9 @@ export function WaAgentDashboard() {
       <section className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-10 sm:px-10">
         {/* Header */}
         <div className="mb-8 flex flex-col gap-2">
-          <a href="/" className="text-xs uppercase tracking-[0.3em] text-white/30 transition hover:text-white/60">
+          <Link href="/" className="text-xs uppercase tracking-[0.3em] text-white/30 transition hover:text-white/60">
             ← Back to Mission Monitor
-          </a>
+          </Link>
           <h1 className="mt-2 text-2xl font-semibold tracking-wide text-white sm:text-3xl">
             WhatsApp Agent Monitor
           </h1>
