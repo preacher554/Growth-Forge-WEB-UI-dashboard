@@ -51,7 +51,7 @@ export async function GET() {
         package: tenant.package,
         whatsappInstance: tenant.whatsapp_instance,
         aiEnabled: tenant.ai_enabled,
-        model: "openrouter/owl-alpha",
+        model: process.env.HERMES_MODEL || "z-ai/glm-4.5-air:free",
         customerCount,
         activeCount,
         waitingHumanCount,
