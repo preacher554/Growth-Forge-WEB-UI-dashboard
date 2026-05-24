@@ -12,11 +12,24 @@ const DEFAULT_SETTINGS = {
   y: 50,
 };
 
-export function AssistantPortraitCard() {
+type AssistantPortraitCardProps = {
+  operator: {
+    name: string;
+    model: string;
+    provider: string;
+    status: string;
+  };
+};
+
+export function AssistantPortraitCard({ operator }: AssistantPortraitCardProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [portrait, setPortrait] = useState<string>(DEFAULT_PORTRAIT);
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const [isEditing, setIsEditing] = useState(false);
+  const isRunning = operator.status.toLowerCase() === "running";
+  const presenceStatus = isRunning
+    ? "Active · with Chief"
+    : "Standby · waiting for dispatch";
 
   useEffect(() => {
     setPortrait(window.localStorage.getItem(STORAGE_KEY) ?? DEFAULT_PORTRAIT);
@@ -52,16 +65,21 @@ export function AssistantPortraitCard() {
         <div className="flex flex-col justify-between p-4">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-forge-red">
-              AI Assistant
+              Main Operator
             </p>
-            <h3 className="mt-4 text-base font-medium text-white">Yuya Presence</h3>
+            <h3 className="mt-4 text-base font-medium text-white">
+              {operator.name} · Operator Layer
+            </h3>
             <p className="mt-2 text-xs leading-5 text-white/55">
-              Standby, observing GrowthForge systems.
+              Calm, read-only command presence for GrowthForge Mission Monitor.
             </p>
 
             <div className="mt-4 space-y-2 text-xs">
-              <MetaLine label="Status" value="standby" />
-              <MetaLine label="Model" value="anthropic/claude-sonnet-4" />
+              <MetaLine label="Presence" value={presenceStatus} />
+              <MetaLine label="Current Focus" value="Monitoring InstaGrow · keeping workers ready" />
+              <MetaLine label="Role" value="Yuya / strategic operator" />
+              <MetaLine label="Model" value={operator.model} />
+              <MetaLine label="Provider" value={operator.provider} />
             </div>
           </div>
 
@@ -81,6 +99,8 @@ export function AssistantPortraitCard() {
           className="relative overflow-hidden bg-black/30"
           aria-label="Upload AI assistant portrait"
         >
+          {/* Plain img is intentional here: uploaded portraits are stored as local data URLs. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={portrait}
             alt="AI assistant portrait"

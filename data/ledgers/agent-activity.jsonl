@@ -1,0 +1,3 @@
+{"timestamp": "2026-05-20T12:20:00+07:00", "systemId": "instagrow", "accountId": "sandbox-ai-cafe", "agent": "Maestro", "event": "Opened sandbox mission for @sandbox_ai_cafe", "status": "done"}
+{"timestamp": "2026-05-20T12:24:00+07:00", "systemId": "instagrow", "accountId": "sandbox-ai-cafe", "agent": "Scout", "event": "Scout is validating cafe automation hooks across Instagram/TikTok/X signals", "status": "running"}
+{"timestamp": "2026-05-20T12:28:00+07:00", "systemId": "instagrow", "accountId": "sandbox-ai-cafe", "agent": "Quill", "event": "Quill queued first caption angle after research gate", "status": "queued"}

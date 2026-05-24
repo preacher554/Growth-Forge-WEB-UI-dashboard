@@ -40,7 +40,7 @@ export function WorkerAgentCard({
     if (savedSettings) {
       setSettings(JSON.parse(savedSettings));
     }
-  }, [settingsKey, storageKey]);
+  }, [defaultPortrait, settingsKey, storageKey]);
 
   function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
@@ -103,6 +103,8 @@ export function WorkerAgentCard({
           className="relative flex items-center justify-center overflow-hidden bg-black/30"
           aria-label={`Upload portrait for ${name}`}
         >
+          {/* Plain img is intentional here: uploaded portraits are stored as local data URLs. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={portrait}
             alt={`${name} portrait`}

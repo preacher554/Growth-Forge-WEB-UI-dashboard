@@ -1,0 +1,5 @@
+{"systemId": "instagrow", "id": "instagrow-conductor", "name": "Maestro", "model": "anthropic/claude-sonnet-4", "provider": "openrouter", "status": "running", "defaultPortrait": "/agents/maestro.png"}
+{"systemId": "instagrow", "id": "instagrow-research", "name": "Scout", "model": "google/gemini-2.5-flash", "provider": "openrouter", "status": "running", "defaultPortrait": "/agents/scout.png"}
+{"systemId": "instagrow", "id": "instagrow-content", "name": "Quill", "model": "anthropic/claude-sonnet-4", "provider": "openrouter", "status": "queued", "defaultPortrait": "/agents/quill.png"}
+{"systemId": "instagrow", "id": "instagrow-creative", "name": "Pixel", "model": "openai/gpt-5.5", "provider": "openrouter", "status": "standby", "defaultPortrait": "/agents/pixel.png"}
+{"systemId": "instagrow", "id": "instagrow-publishing", "name": "Dispatch", "model": "meta-llama/llama-3.3-70b-instruct", "provider": "openrouter", "status": "standby", "defaultPortrait": "/agents/dispatch.png"}
