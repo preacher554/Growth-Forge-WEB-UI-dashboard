@@ -1,0 +1,10 @@
+<svg width="256" height="256" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="34" fill="#070707"/>
+  <rect x="1" y="1" width="126" height="126" rx="33" stroke="white" stroke-opacity="0.12"/>
+  <circle cx="38" cy="27" r="56" fill="#ff6b35" fill-opacity="0.28"/>
+  <circle cx="98" cy="98" r="54" fill="#b91c1c" fill-opacity="0.44"/>
+  <path d="M 35 88 C 38 66 48 56 64 56 C 80 56 90 66 93 88 Z M 64 20 C 78 20 87 31 87 44 C 87 57 78 67 64 67 C 50 67 41 57 41 44 C 41 31 50 20 64 20 Z" fill="url(#yuyag)"/>
+  <path d="M24 100 H104" stroke="white" stroke-opacity="0.12"/>
+  <text x="64" y="111" text-anchor="middle" fill="white" fill-opacity="0.72" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">YUYA</text>
+  <defs><linearGradient id="yuyag" x1="36" y1="18" x2="96" y2="92" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity="0.92"/><stop offset="1" stop-color="#ff6b35" stop-opacity="0.72"/></linearGradient></defs>
+</svg>

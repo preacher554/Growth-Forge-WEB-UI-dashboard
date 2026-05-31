@@ -1,0 +1,10 @@
+<svg width="256" height="256" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="34" fill="#070707"/>
+  <rect x="1" y="1" width="126" height="126" rx="33" stroke="white" stroke-opacity="0.12"/>
+  <circle cx="38" cy="27" r="56" fill="#38bdf8" fill-opacity="0.28"/>
+  <circle cx="98" cy="98" r="54" fill="#312e81" fill-opacity="0.44"/>
+  <path d="M 32 88 C 36 68 49 58 64 58 C 79 58 92 68 96 88 Z M 64 24 C 77 24 86 34 86 46 C 86 58 77 68 64 68 C 51 68 42 58 42 46 C 42 34 51 24 64 24 Z" fill="url(#narag)"/>
+  <path d="M24 100 H104" stroke="white" stroke-opacity="0.12"/>
+  <text x="64" y="111" text-anchor="middle" fill="white" fill-opacity="0.72" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">NARA</text>
+  <defs><linearGradient id="narag" x1="36" y1="18" x2="96" y2="92" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity="0.92"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0.72"/></linearGradient></defs>
+</svg>

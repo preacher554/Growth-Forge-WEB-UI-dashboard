@@ -1,0 +1,10 @@
+<svg width="256" height="256" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="34" fill="#070707"/>
+  <rect x="1" y="1" width="126" height="126" rx="33" stroke="white" stroke-opacity="0.12"/>
+  <circle cx="38" cy="27" r="56" fill="#ff3b00" fill-opacity="0.28"/>
+  <circle cx="98" cy="98" r="54" fill="#7c2d12" fill-opacity="0.44"/>
+  <path d="M 75 58 C 87 58 97 68 97 83 L 97 90 L 31 90 L 31 83 C 31 68 41 58 53 58 Z M 64 22 C 76 22 84 31 84 43 C 84 55 76 64 64 64 C 52 64 44 55 44 43 C 44 31 52 22 64 22 Z" fill="url(#chiefg)"/>
+  <path d="M24 100 H104" stroke="white" stroke-opacity="0.12"/>
+  <text x="64" y="111" text-anchor="middle" fill="white" fill-opacity="0.72" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">CHIEF</text>
+  <defs><linearGradient id="chiefg" x1="36" y1="18" x2="96" y2="92" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity="0.92"/><stop offset="1" stop-color="#ff3b00" stop-opacity="0.72"/></linearGradient></defs>
+</svg>

@@ -1,0 +1,10 @@
+<svg width="256" height="256" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="34" fill="#070707"/>
+  <rect x="1" y="1" width="126" height="126" rx="33" stroke="white" stroke-opacity="0.12"/>
+  <circle cx="38" cy="27" r="56" fill="#2dd4bf" fill-opacity="0.28"/>
+  <circle cx="98" cy="98" r="54" fill="#134e4a" fill-opacity="0.44"/>
+  <path d="M 35 88 C 38 67 49 57 64 57 C 79 57 90 67 93 88 Z M 64 23 C 76 23 85 33 85 45 C 85 58 76 68 64 68 C 52 68 43 58 43 45 C 43 33 52 23 64 23 Z" fill="url(#liag)"/>
+  <path d="M24 100 H104" stroke="white" stroke-opacity="0.12"/>
+  <text x="64" y="111" text-anchor="middle" fill="white" fill-opacity="0.72" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">LIA</text>
+  <defs><linearGradient id="liag" x1="36" y1="18" x2="96" y2="92" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity="0.92"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0.72"/></linearGradient></defs>
+</svg>
